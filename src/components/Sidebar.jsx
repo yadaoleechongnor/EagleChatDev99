@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiHome } from 'react-icons/hi';
-import { PiHandbagLight } from 'react-icons/pi';
 import hong from '../assets/hong.svg';
 import { BiSolidCart } from 'react-icons/bi';
 import { IoWalletSharp } from 'react-icons/io5';
 import HongfahSidebarFeather from './HongfahSidebarFeather';
-import planeicon from '../assets/planeicon.ico';
 import bonus from '../assets/bonus.png';
-import chart from '../assets/chart.png';
 import setting from '../assets/setting.png';
-import structure from '../assets/structure.png';
+import { BsDiagram3Fill } from "react-icons/bs";
+import { BsFillHandbagFill } from "react-icons/bs";
+import { IoStatsChartSharp } from "react-icons/io5";
+import { BiSolidPlaneAlt } from "react-icons/bi";
 
 const navlinks1 = [
   { title: 'Dashboard', icon: <HiHome className='w-8 h-8' />, path: '/' },
-  { title: 'ສີນຄ້າ', icon: <PiHandbagLight className='w-8 h-8' />, path: '/product' },
-  { title: 'ປະຫັວດການຂາຍ', icon: <img src={chart} alt="Chart Icon" className="icon" />, path: '/salehistory' },
+  { title: 'ສີນຄ້າ', icon: <BsFillHandbagFill className='w-8 h-8' />, path: '/product' },
+  { title: 'ປະຫັວດການຂາຍ', icon: <IoStatsChartSharp className='w-8 h-8' />, path: '/salehistory' },
   { title: 'ອໍເດິສັ່ງຊື້', icon: <BiSolidCart className='w-8 h-8' />, path: '/order' },
-  { title: 'ແຜນພັງສາຍງານ', icon: <img src={structure} alt='Structure Icon' className="icon" />, path: '/member' },
+  { title: 'ແຜນພັງສາຍງານ', icon: <BsDiagram3Fill className='w-8 h-8' />, path: '/member' },
   { title: 'Bonus', icon: <img src={bonus} alt="Bonus Icon" className="icon" />, path: '/bonus' },
   { title: 'ກະເປົາ E-wallet', icon: <IoWalletSharp className='w-8 h-8' />, path: '/ewalletwithdraw ' },
-  { title: 'ທິບທ່ອງທຽ່ວ', icon: <img src={planeicon} alt="Plane Icon" className="icon" />, path: '/travel' },
+  { title: 'ທິບທ່ອງທຽ່ວ', icon:<BiSolidPlaneAlt className='w-8 h-8' />, path: '/travel' },
   { title: 'ການຕັ້ງຄ່າ', icon: <img src={setting} alt="Setting Icon" className="icon" />, path: '/setting' },
 ];
 

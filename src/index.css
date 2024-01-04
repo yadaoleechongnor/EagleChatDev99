@@ -21,12 +21,14 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  gap: 3px;
 }
 .Pagination .page-item {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  
 }
 .Pagination .page-link {
   font-size: 0.8rem;
