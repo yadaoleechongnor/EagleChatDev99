@@ -1,57 +1,81 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { IoNotifications } from "react-icons/io5";
 import logout from "../assets/logout.png";
 import hong from "../assets/hong.svg";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Navbar() {
-  return (
-    <div className=" mr-[79.5rem] mt-[-5px] ">
-      <div className="  shadow-lg fixed lg:w-[80rem] w-full flex justify-center items-center">
-        <div className=" p-5 flex justify-between w-full  z-100 items-center  bg-white ">
-          <div className=" flex gap-4 items-center">
-            <div className=" flex  ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 35 29"
-                fill="none"
-                className=" w-5 h-5 md:w-8 md:h-8 lg:w-[39px] lg:h-[29px] "
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M32.4317 26.65L2.56833 26.65C2.2542 26.65 2 26.3964 2 26.0837C2 25.771 2.2542 25.5177 2.56833 25.5177L32.4317 25.5177C32.7458 25.5177 33 25.7707 33 26.0837C33 26.3967 32.7458 26.65 32.4317 26.65ZM24.6817 18.9275L2.56834 18.9275C2.2542 18.9275 2 18.6739 2 18.3612C2 18.0485 2.2542 17.7952 2.56834 17.7952L24.6817 17.7953C24.9958 17.7953 25.25 18.0485 25.25 18.3612C25.25 18.6739 24.9958 18.9275 24.6817 18.9275ZM2.56834 11.2051L32.4317 11.2051C32.7458 11.2051 33 10.9518 33 10.6388C33 10.3261 32.7458 10.0725 32.4317 10.0725L2.56834 10.0724C2.2542 10.0724 2 10.3261 2 10.6388C2 10.9518 2.2542 11.2051 2.56834 11.2051ZM24.6817 3.48296L2.56834 3.48296C2.2542 3.48296 2 3.22967 2 2.91665C2 2.60363 2.2542 2.34999 2.56834 2.34999L24.6817 2.34999C24.9958 2.34999 25.25 2.60363 25.25 2.91665C25.25 3.22967 24.9958 3.48296 24.6817 3.48296Z"
-                  fill="#1F263E"
-                />
-                <path
-                  d="M32.4317 10.0725L32.4317 11.5725L32.4317 10.0725ZM2.56834 10.0724L2.56834 8.57245L2.56834 10.0724ZM2.56833 28.15L32.4317 28.15L32.4317 25.15L2.56833 25.15L2.56833 28.15ZM0.5 26.0837C0.5 27.2292 1.43023 28.15 2.56833 28.15L2.56833 25.15C3.07818 25.15 3.5 25.5635 3.5 26.0837L0.5 26.0837ZM2.56833 24.0177C1.43141 24.0177 0.5 24.9369 0.5 26.0837L3.5 26.0837C3.5 26.6051 3.07699 27.0177 2.56833 27.0177L2.56833 24.0177ZM32.4317 24.0177L2.56833 24.0177L2.56833 27.0177L32.4317 27.0177L32.4317 24.0177ZM34.5 26.0837C34.5 24.936 33.568 24.0177 32.4317 24.0177L32.4317 27.0177C31.9236 27.0177 31.5 26.6053 31.5 26.0837L34.5 26.0837ZM32.4317 28.15C33.5692 28.15 34.5 27.2302 34.5 26.0837L31.5 26.0837C31.5 25.5632 31.9224 25.15 32.4317 25.15L32.4317 28.15ZM2.56834 20.4275L24.6817 20.4275L24.6817 17.4275L2.56834 17.4275L2.56834 20.4275ZM0.500001 18.3612C0.500001 19.5068 1.43022 20.4275 2.56834 20.4275L2.56834 17.4275C3.07818 17.4275 3.5 17.841 3.5 18.3612L0.500001 18.3612ZM2.56834 16.2952C1.43141 16.2952 0.500001 17.2145 0.500001 18.3612L3.5 18.3612C3.5 18.8826 3.07699 19.2952 2.56834 19.2952L2.56834 16.2952ZM24.6817 16.2953L2.56834 16.2952L2.56834 19.2952L24.6817 19.2953L24.6817 16.2953ZM26.75 18.3612C26.75 17.2145 25.8186 16.2953 24.6817 16.2953L24.6817 19.2953C24.173 19.2953 23.75 18.8826 23.75 18.3612L26.75 18.3612ZM24.6817 20.4275C25.8198 20.4275 26.75 19.5068 26.75 18.3612L23.75 18.3612C23.75 17.841 24.1718 17.4275 24.6817 17.4275L24.6817 20.4275ZM32.4317 9.70508L2.56834 9.70508L2.56834 12.7051L32.4317 12.7051L32.4317 9.70508ZM31.5 10.6388C31.5 10.1183 31.9224 9.70508 32.4317 9.70508L32.4317 12.7051C33.5692 12.7051 34.5 11.7852 34.5 10.6388L31.5 10.6388ZM32.4317 11.5725C31.9218 11.5725 31.5 11.159 31.5 10.6388L34.5 10.6388C34.5 9.49323 33.5698 8.57245 32.4317 8.57245L32.4317 11.5725ZM2.56834 11.5724L32.4317 11.5725L32.4317 8.57245L2.56834 8.57245L2.56834 11.5724ZM3.5 10.6388C3.5 11.159 3.07818 11.5724 2.56834 11.5724L2.56834 8.57245C1.43023 8.57245 0.500001 9.49322 0.500001 10.6388L3.5 10.6388ZM2.56834 9.70508C3.07758 9.70508 3.5 10.1183 3.5 10.6388L0.500001 10.6388C0.500001 11.7852 1.43082 12.7051 2.56834 12.7051L2.56834 9.70508ZM2.56834 4.98296L24.6817 4.98296L24.6817 1.98296L2.56834 1.98296L2.56834 4.98296ZM0.500002 2.91665C0.500002 4.06312 1.43081 4.98296 2.56834 4.98296L2.56834 1.98296C3.07759 1.98296 3.5 2.39621 3.5 2.91665L0.500002 2.91665ZM2.56834 0.849992C1.42963 0.849992 0.500002 1.77135 0.500002 2.91665L3.5 2.91665C3.5 3.43591 3.07877 3.84999 2.56834 3.84999L2.56834 0.849992ZM24.6817 0.849994L2.56834 0.849992L2.56834 3.84999L24.6817 3.84999L24.6817 0.849994ZM26.75 2.91665C26.75 1.77136 25.8204 0.849994 24.6817 0.849994L24.6817 3.84999C24.1712 3.84999 23.75 3.43591 23.75 2.91665L26.75 2.91665ZM24.6817 4.98296C25.8192 4.98296 26.75 4.06313 26.75 2.91665L23.75 2.91665C23.75 2.39621 24.1724 1.98296 24.6817 1.98296L24.6817 4.98296Z"
-                  fill="#01A5E8"
-                />
-              </svg>
-            </div>
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  const navigate = useNavigate();
 
+  const handleLogout = () => {
+    // Clear the authentication token from localStorage
+    localStorage.removeItem("token");
+    setLoggedIn(false);
+  };
+
+  const logoutAndRedirect = () => {
+    handleLogout();
+   navigate("/login");
+
+    
+  };
+
+  const handleLogin = () => {
+    setLoggedIn(true);
+    window.location.href = "/login";
+  };
+
+  return (
+    <div className="z-50 fixed w-full shadow-lg bg-white mt-20">
+      <div className="p-5 flex justify-between items-center">
+        <div className="flex gap-4 items-center">
+          <div className="flex">
+            {/* Your logo SVG or other content */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 35 29"
+              fill="none"
+              className="w-5 h-5 md:w-8 md:h-8 lg:w-[39px] lg:h-[29px]"
+            >
+              {/* ... (Your logo SVG path data) */}
+            </svg>
           </div>
-          <div className=" flex gap-3 sml:gap-8">
-            <div className=" w-[5rem] h-8 text-xs sm:text-lg sm:font-medium md:w-[10rem] md:h-12 sm:h-8 sm:w-[8rem] flex items-center justify-center bg-sky-200 rounded-full ">
-              <h1 className=" sm:font-medium  text-blue-dark">ທ່ານມີ 0 PV</h1>
-            </div>
-            <div className="flex items-center justify-center sm:w-12 sm:h-12 sm:bg-blue-dark rounded-full">
-              {" "}
-              <IoNotifications className=" sm:text-white w-5 h-6" />{" "}
-            </div>
-            <div className=" flex">
-              {" "}
-              <div className="flex md:gap-8 justify-center items-center">
-                <div className="flex sm:w-12 sm:h-12 rounded-full bg-blue-dark justify-center items-center">
-                  <img src={hong} alt="" className=" w-8" />
-                </div>
-                <h1 className=" hidden lg:block ">Thadsaphone ShAllio</h1>
+        </div>
+        <div className="flex gap-3 mr-28 sm:gap-8">
+          <div className="w-[5rem] h-8 text-xs sm:text-lg sm:font-medium md:w-[10rem] md:h-12 sm:h-8 sm:w-[8rem] flex items-center justify-center bg-sky-200 rounded-full">
+            <h1 className="sm:font-medium text-blue-dark">ທ່ານມີ 0 PV</h1>
+          </div>
+          <div className="flex items-center justify-center sm:w-12 sm:h-12 sm:bg-blue-dark rounded-full">
+            <IoNotifications className="sm:text-white w-5 h-6" />
+          </div>
+          <div className="flex ">
+            <div className="flex md:gap-8 justify-center items-center">
+              <div className="flex sm:w-12 sm:h-12 rounded-full bg-blue-dark justify-center items-center">
+                <img src={hong} alt="" className="w-8" />
               </div>
-            </div>
-            <div className="flex justify-center items-center ">
-              <img src={logout} alt="" className="w-8 h-8 " />
+              <h1 className="hidden lg:block">Thadsaphone ShAllio</h1>
             </div>
           </div>
+
+          {/* Logout Button */}
+          {isLoggedIn ? (
+            <div
+              className="flex justify-center items-center"
+              onClick={logoutAndRedirect}
+            >
+              <img src={logout} alt="" className="w-8 h-8 cursor-pointer" />
+            </div>
+          ) : (
+            // Login Button
+            <NavLink
+              to="/login"
+              className="flex justify-center items-center"
+              onClick={handleLogin}
+            >
+              {/* Your login button content */}
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

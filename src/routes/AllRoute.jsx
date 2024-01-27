@@ -1,6 +1,7 @@
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 // import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import PrivateRoute from "./PrivateRoute"
 import {
   Login,
   Dashboard,
@@ -38,7 +39,7 @@ const AllRoute = () => {
         <Route path="/register/otp" element={<RegisterPhonenumber/>}/>
         <Route path="/register/otp/success" element={<RegisterSuccess/>}/>
         ------------------Private Route-----------------
-        <Route
+        {/* <Route
           path="/login"
           element={
             <PublicRoute>
@@ -56,14 +57,14 @@ const AllRoute = () => {
         />
         <Route path="/register/otp" element={<PublicRoute>
           <RegisterPhonenumber/>
-        </PublicRoute>} />
+        </PublicRoute>} /> */}
        
         <Route
           path="/"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Dashboard />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
@@ -78,116 +79,116 @@ const AllRoute = () => {
         <Route
           path="/product"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Product />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/addproduct"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <AddProduct />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/productdetail"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Productdetail />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/productorder"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <ProductOrder />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/productpay"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <ProductPay />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/paychoice"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <PayChoice />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/ewallet"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Ewallet />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/paysuccess"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Paysuccess />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         {/*-------------------------------------------------------------------- Order */}
         <Route
           path="/order"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Order />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/buy&sale"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <BuySale />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/salehistory"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <SaleHistory />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         {/* ------------------------------ member ------------------------------ */}
         <Route
           path="/member"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Member />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/membertable"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <MemberTable />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         {/* ========================================= bonus ======================================== */}
         <Route
           path="/bonus"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Bonus />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
 
@@ -195,42 +196,42 @@ const AllRoute = () => {
         <Route
           path="/ewalletwithdraw"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <EwalletWithdraw />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/ewalletmoneywithdraw"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <EwalletMoneyWithdraw />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/ewalletmoneyTransfer"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <EwalletMoneyTransfer />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         {/* ================================ travel ==================================== */}
         <Route
           path="/travel"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Travel/>
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         <Route
           path="/traveldetail"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <TravelDetail/>
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
 

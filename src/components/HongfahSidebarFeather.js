@@ -22,8 +22,8 @@ const HongfahSidebarFeather = () => {
               y2="530.856"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#00AEEF" />
-              <stop offset="1" stop-color="#00AEEF" stop-opacity="0" />
+              <stop stopColor="#00AEEF" />
+              <stop offset="1" stopColor="#00AEEF" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -49,8 +49,8 @@ const HongfahSidebarFeather = () => {
               y2="453.959"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#00AEEF" />
-              <stop offset="1" stop-color="#00AEEF" stop-opacity="0" />
+              <stop stopColor="#00AEEF" />
+              <stop offset="1" stopColor="#00AEEF" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -76,8 +76,8 @@ const HongfahSidebarFeather = () => {
               y2="232.106"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#00AEEF" />
-              <stop offset="1" stop-color="#00AEEF" stop-opacity="0" />
+              <stop stopColor="#00AEEF" />
+              <stop offset="1" stopColor="#00AEEF" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -85,4 +85,5 @@ const HongfahSidebarFeather = () => {
     </div>
   );
 };
+
 export default HongfahSidebarFeather;
