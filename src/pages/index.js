@@ -30,11 +30,16 @@ import EwalletMoneyWithdraw from './Ewallet/EwalletMoneyWithdraw';
 import EwalletMoneyTransfer from './Ewallet/EwalletMoneyTransfer';
 import Travel from './travel/Travel';
 import TravelDetail from './travel/TravelDetail';
+import VerifySwall from './verify/VerifySwall';
+import VerifyRegister2 from './verify/VerifyRegister2';
+import VerifyRegister3 from './verify/VerifyRegister3';
+import VerifyRegister1 from './verify/VerifyRegister1';
+import Package from './package/Package';
 
 export {
     Register,RegisterPhonenumber, RegisterSuccess,ProductOrder,ProductPay,PayChoice,Ewallet,Paysuccess,MemberTable,Bonus,
     Login,Layout,Dashboard,Product,EwalletWithdraw,EwalletMoneyWithdraw,EwalletMoneyTransfer,
     Order,SaleHistory,BuySale,Member,Productdetail,AddProduct,Travel,TravelDetail,
    
-    Error,
+    Error,VerifySwall,VerifyRegister2,VerifyRegister3,VerifyRegister1,Package,
 }

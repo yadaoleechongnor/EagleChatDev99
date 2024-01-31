@@ -12,16 +12,18 @@ import { BsDiagram3Fill } from "react-icons/bs";
 import { BsFillHandbagFill } from "react-icons/bs";
 import { IoStatsChartSharp } from "react-icons/io5";
 import { BiSolidPlaneAlt } from "react-icons/bi";
+import { FaRankingStar } from "react-icons/fa6";
 
 const navlinks1 = [
-  { title: 'Dashboard', icon: <HiHome className='w-8 h-8' />, path: '/' },
-  { title: 'ສີນຄ້າ', icon: <BsFillHandbagFill className='w-8 h-8' />, path: '/product' },
-  { title: 'ປະຫັວດການຂາຍ', icon: <IoStatsChartSharp className='w-8 h-8' />, path: '/salehistory' },
-  { title: 'ອໍເດິສັ່ງຊື້', icon: <BiSolidCart className='w-8 h-8' />, path: '/order' },
-  { title: 'ແຜນພັງສາຍງານ', icon: <BsDiagram3Fill className='w-8 h-8' />, path: '/member' },
+  { title: 'Dashboard', icon: <HiHome className='w-4 h-4' />, path: '/' },
+  { title: 'ສີນຄ້າ', icon: <BsFillHandbagFill className='w-4 h-4' />, path: '/product' },
+  { title: 'ປະຫັວດການຂາຍ', icon: <IoStatsChartSharp className='w-4 h-4' />, path: '/salehistory' },
+  { title: 'ອໍເດິສັ່ງຊື້', icon: <BiSolidCart className='w-4 h-4' />, path: '/order' },
+  { title: 'ແຜນພັງສາຍງານ', icon: <BsDiagram3Fill className='w-4 h-4' />, path: '/member' },
+  { title: 'ແພັກເກດ', icon: <FaRankingStar className='w-4 h-4' />, path: '/package' },
   { title: 'Bonus', icon: <img src={bonus} alt="Bonus Icon" className="icon" />, path: '/bonus' },
-  { title: 'ກະເປົາ E-wallet', icon: <IoWalletSharp className='w-8 h-8' />, path: '/ewalletwithdraw ' },
-  { title: 'ທິບທ່ອງທຽ່ວ', icon:<BiSolidPlaneAlt className='w-8 h-8' />, path: '/travel' },
+  { title: 'ກະເປົາ E-wallet', icon: <IoWalletSharp className='w-4 h-4' />, path: '/ewalletwithdraw ' },
+  { title: 'ທິບທ່ອງທຽ່ວ', icon:<BiSolidPlaneAlt className='w-4 h-4' />, path: '/travel' },
   { title: 'ການຕັ້ງຄ່າ', icon: <img src={setting} alt="Setting Icon" className="icon" />, path: '/setting' },
 ];
 

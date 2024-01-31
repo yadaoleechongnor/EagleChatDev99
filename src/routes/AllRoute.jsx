@@ -28,9 +28,14 @@ import {
   EwalletMoneyTransfer,
   Travel,
   TravelDetail,
+  VerifySwall,
+  VerifyRegister1,
+  VerifyRegister3,
+  VerifyRegister2,
+  Package,
 } from "../pages";
 const AllRoute = () => {
-  const token = localStorage.getItem("token");
+  //  const token = localStorage.getItem("token");
   return (
     <Router>
       <Routes>
@@ -38,6 +43,10 @@ const AllRoute = () => {
         <Route path="/register" element={<Register/>}/>
         <Route path="/register/otp" element={<RegisterPhonenumber/>}/>
         <Route path="/register/otp/success" element={<RegisterSuccess/>}/>
+        <Route path="/verifyswall" element={<VerifySwall/>} />
+        <Route path="/verifyregister1" element={<VerifyRegister1/>} />
+        <Route path="/verifyregister2" element={<VerifyRegister2/>} />
+        <Route path="/verifyregister3" element={<VerifyRegister3/>} />
         ------------------Private Route-----------------
         {/* <Route
           path="/login"
@@ -67,12 +76,14 @@ const AllRoute = () => {
             </PrivateRoute>
           }
         />
+       
+       
         <Route
           path="*"
           element={
-            <PublicRoute>
+            <PrivateRoute>
               <Error />
-            </PublicRoute>
+            </PrivateRoute>
           }
         />
         {/* products */}
@@ -231,6 +242,14 @@ const AllRoute = () => {
           element={
             <PrivateRoute>
               <TravelDetail/>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/package"
+          element={
+            <PrivateRoute>
+              <Package/>
             </PrivateRoute>
           }
         />

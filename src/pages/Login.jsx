@@ -40,7 +40,8 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://hongfah-server.onrender.com/api/v1.0/user/login",
+         "https://hongfah-server.onrender.com/api/v1.0/user/login",
+          // https://hongfah-server.onrender.com/api/v1.0/user/login
         data,
         config
       );
@@ -142,7 +143,7 @@ const Login = () => {
                       </div>
                       <ul>
                         <li className="underline">
-                          <a href="#"> ລືມລະຫັດຜ່ານ </a>
+                          <a href="/afalj"> ລືມລະຫັດຜ່ານ </a>
                         </li>
                       </ul>
                     </div>

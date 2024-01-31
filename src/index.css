@@ -102,6 +102,20 @@ body {
 .icon-container:active::before {
   opacity: 1;
 }
+/* =========================================== swall2 ================================================ */
+
+/* Add this style to your existing CSS or in your HTML file */
+.swal2-popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Optionally, you can add a maximum width for the modal */
+.swal2-popup {
+  max-width: 600px; /* Adjust the value as needed */
+}
 
 
 
