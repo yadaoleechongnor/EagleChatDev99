@@ -1,78 +1,56 @@
-import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { AiOutlineClose } from 'react-icons/ai';
-import { HiHome } from 'react-icons/hi';
-import hong from '../assets/hong.svg';
-import { BiSolidCart } from 'react-icons/bi';
-import { IoWalletSharp } from 'react-icons/io5';
-import HongfahSidebarFeather from './HongfahSidebarFeather';
-import bonus from '../assets/bonus.png';
-import setting from '../assets/setting.png';
-import { BsDiagram3Fill } from "react-icons/bs";
-import { BsFillHandbagFill } from "react-icons/bs";
-import { IoStatsChartSharp } from "react-icons/io5";
-import { BiSolidPlaneAlt } from "react-icons/bi";
-import { FaRankingStar } from "react-icons/fa6";
+import React from 'react'
+import {TbCircleDotted} from "react-icons/tb";
+import Personcomponent from './sidebarcomponents/Personcomponent';
 
-const navlinks1 = [
-  { title: 'Dashboard', icon: <HiHome className='w-4 h-4' />, path: '/' },
-  { title: 'ສີນຄ້າ', icon: <BsFillHandbagFill className='w-4 h-4' />, path: '/product' },
-  { title: 'ປະຫັວດການຂາຍ', icon: <IoStatsChartSharp className='w-4 h-4' />, path: '/salehistory' },
-  { title: 'ອໍເດິສັ່ງຊື້', icon: <BiSolidCart className='w-4 h-4' />, path: '/order' },
-  { title: 'ແຜນພັງສາຍງານ', icon: <BsDiagram3Fill className='w-4 h-4' />, path: '/member' },
-  { title: 'ແພັກເກດ', icon: <FaRankingStar className='w-4 h-4' />, path: '/package' },
-  { title: 'Bonus', icon: <img src={bonus} alt="Bonus Icon" className="icon" />, path: '/bonus' },
-  { title: 'ກະເປົາ E-wallet', icon: <IoWalletSharp className='w-4 h-4' />, path: '/ewalletwithdraw ' },
-  { title: 'ທິບທ່ອງທຽ່ວ', icon:<BiSolidPlaneAlt className='w-4 h-4' />, path: '/travel' },
-  { title: 'ການຕັ້ງຄ່າ', icon: <img src={setting} alt="Setting Icon" className="icon" />, path: '/setting' },
-];
+import {IoIosSearch} from "react-icons/io";
+import {LuListFilter} from "react-icons/lu";
 
-const Sidebar = ({ click, setClick }) => {
-  const location = useLocation();
-  const [activeLink, setActiveLink] = useState(location.pathname);
+function Sidebar() {
+	return (
+		<div className='  overflow-scroll w-full flex justify-center hover:shadow-lg hover:shadow-blue-light  '>
+			<div className='hidden lg:block lg:flex  flex flex-col fixed z-50 bg-white w-[24rem] items-center '>
+				<div className=' w-[95%]  flex flex-col items-center '>
+					<div className='w-full flex items-center  text-blue-light  justify-between my-5 '>
+						<div className='flex gap-3 items-center '>
 
-  const handleLinkClick = (path) => {
-    setActiveLink(path);
-    setClick(false);
-  };
+							<span className=' text-3xl font-bold '>Chats</span>
+						</div>
+						<TbCircleDotted className=' h-6 w-6'/>
 
-  return (
-    <div
-      onClick={() => setClick(false)}
-      className={`bg-gradient-to-b from-blue-dark to-blue-light w-[15rem] max-w-[100%] z-[100] duration-500 min-h-screen shadow p-2 drop-shadow-md md:block md:left-0 top-0 fixed ${click ? 'top-0 left-0' : 'fixed -left-[100rem]'}`}
-    >
-      <div className="absolute mt-[15rem]">
-        <HongfahSidebarFeather />
-      </div>
-      <div className="logo w-full flex align-middle relative">
-        <span
-          onClick={() => setClick(false)}
-          className="text-base p-2 rounded-full bg-main-color absolute top-2 -right-[1.5rem] z-40 cursor-pointer md:hidden block"
-        >
-          <AiOutlineClose className="text-white" size={20} />
-        </span>
-      </div>
-      <nav className='absolute w-[93%]'>
-        <ul className="flex gap-2 flex-col">
-          <div className="w-full h-[10rem] flex justify-center my-8">
-            <img src={hong} alt="" className="w-[150px] h-[170px] cursor-pointer" />
-          </div>
-          {navlinks1.map((link, index) => (
-            <li key={index}>
-              <NavLink 
-                to={link.path}
-                onClick={() => handleLinkClick(link.path)}
-                className={activeLink === link.path ? 'flex gap-2 items-center p-2 rounded-full bg-white text-blue-dark' : 'flex text-white gap-3 items-center p-2 bg-transparent rounded-full hover:bg-white hover:text-blue-dark'}
-              >
-                <span className="icon-container">{link.icon}</span>
-                <span>{link.title}</span>
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
-  );
-};
+					</div>
+					<div className=' flex w-full '>
+						<div className=' flex items-center hover:shadow-lg gap-2 w-full rounded-full border  text-blue-light  '>
+							<IoIosSearch className=' h-8 w-8 ml-2'/>
+							<input type="search" name="" id="" placeholder='Search ' className=' my-3 w-full outline-none '/>
+							<LuListFilter className=' h-8 w-8 mr-2'/>
 
-export default Sidebar;
+						</div>
+					</div>
+					<div className=' w-full '>
+						<div className=' flex items-center gap-4 my-3 '>
+							{/* <span>Archived </span> */} </div>
+						<hr className=' w-full border my-2 '/>
+
+						<div>
+							<span className=' my-2 '>All
+							</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div className=' w-[90%] '>
+
+
+				<div className=' h-full flex overflow-scroll  '>
+					<div className=' w-full lg:mt-[12rem] flex  '>
+						<Personcomponent/>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+export default Sidebar

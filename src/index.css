@@ -15,48 +15,7 @@ body {
   background-color: #F4F7FC;
 }
 /*  ------------------------------------------------- Pagination --------------------------------- */
-.Pagination {
-  display: flex;
-  padding: 1rem 50%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 3px;
-}
-.Pagination .page-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  
-}
-.Pagination .page-link {
-  font-size: 0.8rem;
-  padding: 0.4rem 0.8rem;
-}
-.Pagination .page-link.prev,
-.Pagination .page-link.next {
-  border: 0;
-  transition: all 0.5s ease-in-out;
-}
-.Pagination .page-link.prev:hover,
-.Pagination .page-link.next:hover {
-  background-color: gainsboro;
-  color: #31a7fb;
-}
-.Pagination .active {
-  background-color: #31a7fb;
-  color: white;
-}
 
-/* login background
- */
-
-.login-background {
-  background: linear-gradient(153deg, #2653b7, #26b7ae, #2926b7, #1915d6);
-  background-size: 240% 240%;
-  animation: gradient-animation 20s ease infinite;
-}
 
 @keyframes gradient-animation {
   0% {
@@ -70,51 +29,27 @@ body {
   }
 }
 
-/* Sidebar.css */
-.icon-container {
-  position: relative;
+
+
+/* This is custom CSS */
+/* For WebKit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 1px;
 }
 
-.icon-container img {
-  width: 30px; /* Adjust the size of the icon as needed */
-  height: auto;
-  transition: filter 0.3s ease-in-out;
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 5px;
 }
 
-.icon-container img:hover,
-.icon-container img:active {
-  filter: brightness(1.2); /* Increase brightness on hover and click */
+/* For Firefox */
+::-moz-scrollbar {
+  width: 5px;
 }
 
-.icon-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 255, 0.2); /* Blue color overlay on hover and click */
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.icon-container:hover::before,
-.icon-container:active::before {
-  opacity: 1;
-}
-/* =========================================== swall2 ================================================ */
-
-/* Add this style to your existing CSS or in your HTML file */
-.swal2-popup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Optionally, you can add a maximum width for the modal */
-.swal2-popup {
-  max-width: 600px; /* Adjust the value as needed */
+::-moz-scrollbar-thumb {
+  background-color: #4A90E2;
+  border-radius: 5px;
 }
 
 

@@ -1,7 +1,7 @@
 
 import Sidebar from './Sidebar';
-import Loader from "./Loader";
-import GalleryImages from "./GalleryImages";
+import Loader from './Loader';
+
 export {
-    Sidebar,Loader,GalleryImages,
+    Sidebar,Loader,
 }
