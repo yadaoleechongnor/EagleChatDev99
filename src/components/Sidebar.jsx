@@ -44,8 +44,9 @@ function Sidebar() {
 
 
 				<div className=' h-full flex overflow-scroll  '>
-					<div className=' w-full lg:mt-[12rem] flex  '>
+					<div className=' w-full lg:mt-[12rem] flex '>
 						<Personcomponent/>
+						
 					</div>
 				</div>
 			</div>

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Register() {
-    const [name, setName] = useState("");
+    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
@@ -17,8 +17,8 @@ function Register() {
     const handleChange = (event) => {
         const { name, value } = event.target;
         switch (name) {
-            case "name":
-                setName(value);
+            case "username":
+                setUsername(value);
                 break;
             case "email":
                 setEmail(value);
@@ -38,7 +38,7 @@ function Register() {
     };
 
     // Handle form submission
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         handleRegister();
     };
@@ -55,7 +55,7 @@ function Register() {
 
             // Prepare user data
             const userData = {
-                name,
+                username,
                 email: trimmedEmail,
                 phoneNumber,
                 password,
@@ -92,11 +92,14 @@ function Register() {
             console.log("Server response:", response.data);
 
             // Clear input fields
+            setUsername("");
             setEmail("");
             setPhoneNumber("");
+            setPassword("");
+            setConfirmPassword("");
 
             // Navigate to "/register/otp" after successful registration
-            navigate("/register/otp");
+            navigate("/registerotp");
         }
     };
 
@@ -133,8 +136,8 @@ function Register() {
                                     <span>Name</span>
                                     <input
                                         type="text"
-                                        name="name"
-                                        value={name}
+                                        name="username"
+                                        value={username}
                                         onChange={handleChange}
                                         className=' w-full bg-white outline-none '
                                         placeholder=' Name '
