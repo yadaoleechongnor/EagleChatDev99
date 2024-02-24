@@ -15,7 +15,7 @@ import {
  
 } from "../pages";
 const AllRoute = () => {
-  //  const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
   return (
     <Router>
       <Routes>

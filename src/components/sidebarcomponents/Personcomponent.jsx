@@ -6,6 +6,7 @@ import profile from '../../assets/EagleDev99.svg';
 function PersonComponent() {
   const [selectedPerson, setSelectedPerson] = useState(null);
   const [users, setUsers] = useState([]);
+  const [error, setError] = useState(null); // Add state for error handling
 
   useEffect(() => {
     // Provided user token
@@ -26,6 +27,7 @@ function PersonComponent() {
         console.error('Error fetching users:', error);
         console.error('Response status:', error.response.status);
         console.error('Response data:', error.response.data);
+        setError(error); // Set error state
       });
   }, []);
 
@@ -41,6 +43,7 @@ function PersonComponent() {
 
   return (
     <div className='w-full'>
+      {error && <div>Error: {error.message}</div>} {/* Display error message */}
       {users.map((user) => (
         <NavLink to="/chat"
           key={user._id} 
