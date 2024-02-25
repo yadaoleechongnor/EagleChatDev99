@@ -32,9 +32,14 @@ function Sidebar1() {
           <img src={EagleDev99} alt="" className='w-14 h-14' />
         </div>
         <div className='w-full flex flex-col items-center'>
-          <div onClick={handleLogin} className='hover:shadow-lg text-white hover:shadow-blue-light h-12 w-12 flex justify-center items-center rounded-lg bg-blue-light my-4 cursor-pointer'>
-            <SiGooglemessages className='h-8 w-8 hover:w-10 hover:h-10' />
-          </div>
+          {isLoggedIn ? (
+            <>
+              <div onClick={handleLogin} className='hover:shadow-lg text-white hover:shadow-blue-light h-12 w-12 flex justify-center items-center rounded-lg bg-blue-light my-4 cursor-pointer'>
+                <SiGooglemessages className='h-8 w-8 hover:w-10 hover:h-10' />
+              </div>
+              {/* Additional conditional rendering for logged in users */}
+            </>
+          ) : null}
           <div className='h-12 w-12 flex justify-center hover:text-white items-center rounded-lg hover:bg-blue-light hover:shadow-lg hover:shadow-blue-light my-4 cursor-pointer'>
             <BsPeople className='h-8 w-8 hover:w-10 hover:h-10' />
           </div>
@@ -47,8 +52,8 @@ function Sidebar1() {
           <div className='h-12 w-12 flex hover:shadow-lg hover:text-white hover:shadow-blue-light justify-center items-center rounded-lg hover:bg-blue-light my-4 cursor-pointer'>
             <IoMdNotificationsOutline className='h-8 w-8 hover:w-10 hover:h-10' />
           </div>
-          <div onClick={handleLogout} className='hover:text-sky-400 border rounded-full hover:shadow-lg cursor-pointer'>
-            <span className='px-2'>Logout</span>
+          <div onClick={isLoggedIn ? handleLogout : handleLogin} className='hover:text-sky-400 border rounded-full hover:shadow-lg cursor-pointer'>
+            <span className='px-2'>{isLoggedIn ? 'Logout' : 'Login'}</span>
           </div>
         </div>
       </div>

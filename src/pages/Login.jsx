@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FcGoogle } from "react-icons/fc";
 import { errorSwal, successSwal } from './../helpers/sweetalert';
+import { apiLink } from '../auth/Api';
 
 function Login() {
   const [loading, setLoading] = useState(false);
@@ -31,7 +32,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "https://eaglechat.onrender.com/user/login",
+        `${apiLink}/user/login`,
         data
       );
 
@@ -46,7 +47,7 @@ function Login() {
       if (error.response) {
         console.error("Response Data:", error.response.data);
         console.error("Response Status:", error.response.status);
-        errorSwal("Invalid credentials. Please try again.");
+        errorSwal("fill out the form !");
       } else if (error.request) {
         console.error("Request:", error.request);
         errorSwal("No response from server. Please try again later.");
@@ -70,11 +71,11 @@ function Login() {
               <div className='flex flex-col'>
                 <div className='border-b-2 border-black my-3'>
                   <span>E-mail</span>
-                  <input type="email" className='w-full bg-white outline-none' placeholder=' E-mail Require' value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <input type="email" required className='w-full bg-white outline-none' placeholder=' E-mail Require' value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className='border-b-2 border-black my-2'>
                   <span>Password</span>
-                  <input type="password" className='w-full bg-white outline-none' placeholder=' Password Require' value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <input type="password" required className='w-full bg-white outline-none' placeholder=' Password Require' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
               </div>
               <div className='flex w-full flex-col justify-center my-3'>

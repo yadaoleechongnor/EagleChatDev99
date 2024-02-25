@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { apiLink } from '../../auth/Api';
 
 function Register() {
     const [username, setUsername] = useState("");
@@ -64,7 +65,7 @@ function Register() {
 
             // Send registration request to the server
             const response = await axios.post(
-                "https://eaglechat.onrender.com/user/register",
+                `${apiLink}/user/register`,
                 userData
             );
 
