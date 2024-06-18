@@ -8,14 +8,14 @@ import { HiOutlineArchiveBox } from "react-icons/hi2";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import EagleDev99 from "../assets/EagleDev99.svg";
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function Sidebar1() {
   const [isLoggedIn, setLoggedIn] = useState(true);
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Clear the authentication token from localStorage
-    localStorage.removeItem("token");
+    Cookies.remove("token");
     setLoggedIn(false);
     navigate("/login");
   };
@@ -34,7 +34,7 @@ function Sidebar1() {
         <div className='w-full flex flex-col items-center'>
           {isLoggedIn ? (
             <>
-              <div onClick={handleLogin} className='hover:shadow-lg text-white hover:shadow-blue-light h-12 w-12 flex justify-center items-center rounded-lg bg-blue-light my-4 cursor-pointer'>
+              <div  className='hover:shadow-lg text-white hover:shadow-blue-light h-12 w-12 flex justify-center items-center rounded-lg bg-blue-light my-4 cursor-pointer'>
                 <SiGooglemessages className='h-8 w-8 hover:w-10 hover:h-10' />
               </div>
               {/* Additional conditional rendering for logged in users */}

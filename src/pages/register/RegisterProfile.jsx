@@ -55,7 +55,7 @@ function RegisterProfile() {
 							</div>
 
 							<div className='flex flex-col gap-5 my-4 w-full'>
-								<NavLink to="/" className='flex w-full justify-center items-center h-12 rounded-full text-white font-medium bg-blue-light'>Next</NavLink>
+								<NavLink to="/login" className='flex w-full justify-center items-center h-12 rounded-full text-white font-medium bg-blue-light'>Next</NavLink>
 
 								<NavLink to="/registerotp" className='flex w-full justify-center items-center h-12 rounded-full text-white font-medium bg-blue-light gap-2'>
 									back
